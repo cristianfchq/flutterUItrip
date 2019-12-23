@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutterexample/second.dart';
 
 void main() => runApp(MyApp());
@@ -7,6 +8,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations(
+      [
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown,
+      ],
+    );
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
@@ -294,7 +301,6 @@ class _MyMainPageState extends State<MyMainPage> {
       bottomNavigationBar: Container(
         height: 100.0,
         color: Colors.white,
-
         child: Padding(
           padding: const EdgeInsets.only(
             left: 40.0,
